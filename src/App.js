@@ -1,52 +1,63 @@
-import React from 'react';
-import ReactQuill, { Quill }  from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-import 'react-quill/dist/quill.core.css';
+import React from "react";
+import ReactQuill, { Quill } from "react-quill";
+import "react-quill/dist/quill.snow.css";
+import "react-quill/dist/quill.core.css";
 
 class App extends React.Component {
-  
   constructor(props) {
     super(props);
     this.state = {
-      text: "",
-    }
+      text: ""
+    };
   }
- 
+
   modules = {
     toolbar: [
-      ['formula'],
-      [{ 'header': [1, 2, false] }],
-      [{'align': ['','center', 'right', 'justify']}],
-      ['blockquote', 'code-block'],
-      ['bold', 'italic', 'underline','strike', 'blockquote'],
-      [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-      ['link', 'image', 'video']
-    ],
-  }
- 
+      ["formula"],
+      [{ header: [1, 2, false] }],
+      [{ align: ["", "center", "right", "justify"] }],
+      ["blockquote", "code-block"],
+      ["bold", "italic", "underline", "strike"],
+      [
+        { list: "ordered" },
+        { list: "bullet" },
+        { indent: "-1" },
+        { indent: "+1" }
+      ],
+      ["link", "image", "video"]
+    ]
+  };
+
   formats = [
-    'formula',
-    'header',
-    'align',
-    'blockquote', 'code-block',
-    'bold', 'italic', 'underline', 'strike', 'blockquote',
-    'list', 'bullet', 'indent',
-    'link', 'image', 'video'
-  ]
+    "formula",
+    "header",
+    "align",
+    "blockquote",
+    "code-block",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "bullet",
+    "indent",
+    "link",
+    "image",
+    "video"
+  ];
 
-
- 
   render() {
     return (
       <div className="container">
         <div className="text-editor">
-        <ReactQuill 
-                    className="editor"
-                    theme="snow"
-                    modules={this.modules}
-                    formats={this.formats}>
-        </ReactQuill>
-      </div>
+          <ReactQuill
+            className="editor"
+            theme="snow"
+            modules={this.modules}
+            formats={this.formats}
+          />
+        </div>
         <style jsx>{`
           .container {
             width: 100%;
