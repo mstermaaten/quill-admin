@@ -1,7 +1,10 @@
 import React from "react";
 import ReactQuill, { Quill } from "react-quill";
+import ImageResize from "quill-image-resize-module";
 import "react-quill/dist/quill.snow.css";
 import "react-quill/dist/quill.core.css";
+
+Quill.register("modules/ImageResize", ImageResize);
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +15,7 @@ class App extends React.Component {
   }
 
   modules = {
+    ImageResize: {},
     toolbar: [
       ["formula"],
       [{ header: [1, 2, false] }],
